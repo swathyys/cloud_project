@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Institution</title>
+    
+    <!-- Internal CSS -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4CAF50;
+            padding: 20px;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Courses Section */
+        .courses-section {
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .courses-section h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .courses-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .course-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-card h3 {
+            margin-top: 0;
+            color: #4CAF50;
+        }
+
+        .course-card p {
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Education Institution</h1>
+        <nav>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+        </nav>
+    </header>
+
+    <section class="courses-section">
+        <h2>Our Courses</h2>
+        <div class="courses-container">
+            <div class="course-card">
+                <h3>Web Development</h3>
+                <p>Learn to build websites with HTML, CSS, JavaScript, and more.</p>
+            </div>
+            <div class="course-card">
+                <h3>Data Science</h3>
+                <p>Explore data analysis, machine learning, and AI techniques.</p>
+            </div>
+            <div class="course-card">
+                <h3>Mobile App Development</h3>
+                <p>Create mobile applications for Android and iOS using modern frameworks.</p>
+            </div>
+            <div class="course-card">
+                <h3>Cyber Security</h3>
+                <p>Gain knowledge on protecting systems and data from cyber threats.</p>
+            </div>
+            <div class="course-card">
+                <h3>AIML</h3>
+                <p>Dive into artificial intelligence and machine learning concepts and applications.</p>
+            </div>
+            <div class="course-card">
+                <h3>IoT</h3>
+                <p>Learn about the Internet of Things and how to connect devices to the web.</p>
+            </div>
+            <div class="course-card">
+                <h3>Software Testing</h3>
+                <p>Understand the methodologies for ensuring software quality and performance.</p>
+            </div>
+            <div class="course-card">
+                <h3>UI/UX Design</h3>
+                <p>Master the principles of user interface and user experience design.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Education Institution. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f9; /* Light background for contrast */
+        }
+
+        .frame {
+            background-color: white; /* Frame background color */
+            padding: 20px; /* Padding inside the frame */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            max-width: 400px; /* Maximum width of the frame */
+            margin: auto; /* Center the frame horizontally */
+        }
+
+        img {
+            max-width: 150px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="frame">
+        <h2>Welcome, {{ user['name'] }}!</h2>
+        <h3>Your Details</h3>
+        <p><strong>Name:</strong> {{ user['name'] }}</p>
+        <p><strong>Address:</strong> {{ user['address'] }}</p>
+        <p><strong>Age:</strong> {{ user['age'] }}</p>
+        <p>Date of Birth: 
+            {% if user.dob %}
+                {{ user.dob.strftime('%Y-%m-%d') }}
+            {% else %}
+                N/A
+            {% endif %}
+        </p>    
+        <p><strong>Username:</strong> {{ user['username'] }}</p>
+        <p><strong>Courses:</strong> {{ user['course'] }}</p> <!-- Display courses -->
+
+        {% if user['profile_photo'] %}
+            <p><strong>Profile Photo:</strong></p>
+            <img src="{{ url_for('static', filename='uploads/' + user['profile_photo']) }}" alt="Profile Photo">
+        {% else %}
+            <p>No profile photo uploaded.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
